@@ -1,0 +1,61 @@
+import React, { Component } from 'react';
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+
+class App extends Component {
+
+  render() {
+
+    // Each one of these can be a cell
+    const data = [{
+      y: 1,
+      1: 1,
+      2: 2,
+    },{
+      y: 2,
+      1: 2,
+      2: 4
+    },{
+      y: 3,
+      1: 3,
+      2: 6
+    }]
+
+    const columns = [{
+      Header: 'x',
+      accessor: 'y'
+    },{
+      Header: '1',
+      accessor: '1'
+    },{
+      Header: '2',
+      accessor: '2'
+    }]
+
+    var style0 = {
+    }
+
+    var style1 = {
+      textAlign: 'center',
+      width: 500,
+
+    }
+
+    return (
+        <div style={style0}>
+          <div style={style1}>
+              <ReactTable
+                data={data}
+                columns={columns}
+                showPagination={false}
+                defaultPageSize={3}
+
+              />
+          </div>
+        </div>
+    )
+
+  }
+}
+
+export default App;
